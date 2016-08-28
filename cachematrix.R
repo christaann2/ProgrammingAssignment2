@@ -6,6 +6,14 @@
 ## - stores the data in inv_matrix
 
 
+## cacheSolve returns the inverse of the matrix by doing the following:
+## - gets the stored inverse matrix
+## - returns the inverse matrix if it exists, else
+## - calculates the inverse matrix
+## - stores the information 
+## - returns the inverse of the matrix
+
+
 makeCacheMatrix <- function(x = matrix()) {
   inv_matrix <- NULL
   set <- function(z) {
@@ -19,15 +27,6 @@ makeCacheMatrix <- function(x = matrix()) {
        setinv = setinv, 
        getinv = getinv)
 }
-
-
-## cacheSolve returns the inverse of the matrix by doing the following:
-## - gets the stored inverse matrix
-## - returns the inverse matrix if it exists, else
-## - calculates the inverse matrix
-## - stores the information in cache
-## - returns the inverse of the matrix
-
 cacheSolve <- function(x, ...) {
   inv_matrix <- x$getinv()
   if(!is.null(inv_matrix)) {
